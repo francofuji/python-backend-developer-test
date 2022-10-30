@@ -58,4 +58,6 @@ For the solution of the given exercise we will have to go againts the requiremen
 
 Note that we are using HTTP methods to define the CRUD operations for any track resource or tracks resources collection.
 
+Due to we use Test Driven Development, we taked each exercise as a user history and started a process of test and error until each user history (exercise) be completed.
+
 
