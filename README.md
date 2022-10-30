@@ -44,4 +44,18 @@ The JSON have, besides some general info describing the content of the file, a l
             }
 
 
+According to this, we could have a data schema with the following entities:
+. Artist
+. Genre
+. Track
+
+For the solution of the given exercise we will have to go againts the requirements of having four endpoints. We will follow best practices in API design (https://swagger.io/resources/articles/best-practices-in-api-design/) and those four endpoints refers to one unique resource: tracks. So we will have this endpoint only: /api/v0/tracks. Having that unique endpoint, each of the exercises will resolved as follows:
+
+1. An endpoint to provide a search lookup within the tracks: GET /api/v0/tracks?name='Rihanna'
+2. An endpoint that would allow to get the top 50 popularity tracks: GET /api/v0/tracks?limit=10
+3. An endpoint to remove a track, using a given identifier: DELETE /api/v0/tracks/1650841515
+4. An endpoint to add new tracks using ORM: POST /api/v0/tracks
+
+Note that we are using HTTP methods to define the CRUD operations for any track resource or tracks resources collection.
+
 
