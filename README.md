@@ -60,4 +60,15 @@ Note that we are using HTTP methods to define the CRUD operations for any track 
 
 Due to we use Test Driven Development, we taked each exercise as a user history and started a process of test and error until each user history (exercise) be completed.
 
+We created a django project and named it music_track. Then we added a new application named top_songs.
+
+Our first test case was to get a list of tracks. When we run "python manage.py test", we first got error importing the Track model, so we had to create it with the other two models and their relations, make the migrations and migrate.
+
+Then we get a 404 error. That is because we have to create an URL conf. We create de URLS using django rest framework (DRF) SimpleRouter. From routing we will use DRF ModelViewSet for handling all HTTP methods associated to track resource in a single class, and finally we created a serializer class for Track model.
+
+
+
+
+
+
 
