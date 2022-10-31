@@ -66,6 +66,8 @@ Our first test case was to get a list of tracks. When we run "python manage.py t
 
 Then we get a 404 error. That is because we have to create an URL conf. We create de URLS using django rest framework (DRF) SimpleRouter. From routing we will use DRF ModelViewSet for handling all HTTP methods associated to track resource in a single class, and finally we created a serializer class for Track model.
 
+Once we have the endpoint for getting the track list working, we need to add data to database. For this we use a migration. This migration will read the json file and will fill tables with data. The migration is runned when calling the migrate command.
+
 
 
 
