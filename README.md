@@ -8,7 +8,7 @@ This repo containts a Django project as evaluation for a Python Backend Develope
 
 1. Start a python virtual environment
 2. Clone the repo
-3. CD to music_track folder
+3. CD to python-backend-developer-test folder
 4. In a command shell type:
    1. pip install -r requirements.txt
    2. python manage.py migrate
