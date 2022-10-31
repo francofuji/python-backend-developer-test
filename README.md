@@ -71,7 +71,7 @@ Once we have the endpoint for getting the track list working, we need to add dat
 
 Once we have the endpoint returning all records we can then add filter options. We can do this in easy way with SearchFilter from DRF in the ViewSet. We defined search fields for track name and artist name.
 
-For limiting the amount of records we set  
+For limiting the amount of records we set the pagination_class attribute of the viewset with LimitOffsetPagination. Then we can pass the limit parameter in the url for limiting the amount of records we get from the endpoint.
 
 
 
