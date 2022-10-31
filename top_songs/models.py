@@ -15,7 +15,7 @@ class Genre(models.Model):
 
     def __str__(self):
         """Unicode representation of Genre."""
-        pass
+        return self.name
 
 
 class Artist(models.Model):
@@ -32,7 +32,7 @@ class Artist(models.Model):
 
     def __str__(self):
         """Unicode representation of Artist."""
-        pass
+        return self.artistName
 
 
 class Track(models.Model):
@@ -56,5 +56,5 @@ class Track(models.Model):
 
     def __str__(self):
         """Unicode representation of Track."""
-        return "{} by {}".format(self.name, self.artist.name)
+        return "{} by {}".format(self.name, self.artist.artistName)
     

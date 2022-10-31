@@ -15,32 +15,29 @@ def fill_database(apps, schema_editor):
     f = open('./songs.json')
     data = json.load(f)
     for json_track in data['feed']['results']:
-        artist, created = Artist.objects.get_or_create(id=json_track['artistId'])
-        if created:
-           artist.id = int(json_track['artistId']) 
-           artist.artistName = json_track['artistName'] 
-           artist.artistUrl = json_track['artistUrl']
-           artist.save()
-        track, created = Track.objects.get_or_create(id=json_track['id'], defaults={
+        artist, created = Artist.objects.get_or_create(id=int(json_track['artistId']), defaults={
+            'artistName': json_track['artistName'],
+            'artistUrl': json_track['artistUrl']
+        })
+        
+        track, created = Track.objects.get_or_create(id=int(json_track['id']), defaults={
             'releaseDate': datetime.datetime.strptime(json_track['releaseDate'], '%Y-%m-%d'),
             'artist': artist,
-            'id': int(json_track['id']),
             'name': json_track['name'],
+            'kind': json_track['kind'],
             'artworkUrl100': json_track['artworkUrl100'],
             'url': json_track['url'],
         })
         if created:
             if 'contentAdvisoryRating' in json_track:
                 track.contentAdvisoryRating = json_track['contentAdvisoryRating']
-            track.save()
+                track.save()
         for json_genre in json_track['genres']:
-            genre, created = Genre.objects.get_or_create(id=json_genre['genreId'])
-            if created:
-                genre.name = json_genre['name']
-                genre.url = json_genre['url']
-                genre.save()
+            genre, created = Genre.objects.get_or_create(id=int(json_genre['genreId']), defaults={
+                'name': json_genre['name'],
+                'url': json_genre['url']
+            })
             track.genres.add(genre)
-
     
     f.close()
 
