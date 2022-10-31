@@ -6,10 +6,13 @@ This repo containts a Django project as evaluation for a Python Backend Develope
 
 ## How to run the project:
 
-1. TODO
-2. TODO
-3. TODO
-4. TODO
+1. Start a python virtual environment
+2. Clone the repo
+3. CD to music_track folder
+4. In a command shell type:
+   1. pip install -r requirements.txt
+   2. python manage.py migrate
+   3. python manage.py runserver
 
 ## Code structure overview:
 
@@ -52,8 +55,8 @@ According to this, we could have a data schema with the following entities:
 
 For the solution of the given exercise we will have to go againts the requirements of having four endpoints. We will follow best practices in API design (https://swagger.io/resources/articles/best-practices-in-api-design/) and those four endpoints refers to one unique resource: tracks. So we will have this endpoint only: /api/v0/tracks. Having that unique endpoint, each of the exercises will resolved as follows:
 
-1. An endpoint to provide a search lookup within the tracks: GET /api/v0/tracks?name='Rihanna'
-2. An endpoint that would allow to get the top 50 popularity tracks: GET /api/v0/tracks?limit=10
+1. An endpoint to provide a search lookup within the tracks: GET /api/v0/tracks/?search=Rihanna
+2. An endpoint that would allow to get the top 50 popularity tracks: GET /api/v0/tracks/?limit=10
 3. An endpoint to remove a track, using a given identifier: DELETE /api/v0/tracks/1650841515
 4. An endpoint to add new tracks using ORM: POST /api/v0/tracks
 
