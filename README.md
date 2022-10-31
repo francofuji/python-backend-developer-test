@@ -13,6 +13,7 @@ This repo containts a Django project as evaluation for a Python Backend Develope
 
 ## Code structure overview:
 
+The project folder contains a folder with top_songs app that contains three models, a viewset and some serializers. The root folder contains the file requirements.txt for installing dependencies.
 
 ## Solution description
 
@@ -68,7 +69,9 @@ Then we get a 404 error. That is because we have to create an URL conf. We creat
 
 Once we have the endpoint for getting the track list working, we need to add data to database. For this we use a migration. This migration will read the json file and will fill tables with data. The migration is runned when calling the migrate command.
 
+Once we have the endpoint returning all records we can then add filter options. We can do this in easy way with SearchFilter from DRF in the ViewSet. We defined search fields for track name and artist name.
 
+For limiting the amount of records we set  
 
 
 
